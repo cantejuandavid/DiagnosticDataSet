@@ -25,10 +25,10 @@ Also I use Angular-Material And Materializecss to give Style. The site is Respon
 * Autocomplete
 * Responsive and Mobile Desing
 
-Special Thanks to:
+### Special Thanks to:
 
-Ng-Academy Youtube Channel : 
-  
+* Ng-Academy Youtube Channel : 
+ 
   Video Part 1:
   https://www.youtube.com/watch?v=yjy8AYoo-NE
   
@@ -36,10 +36,13 @@ Ng-Academy Youtube Channel :
   https://www.youtube.com/watch?v=qRz87S4X0Tk
   
 
-Code School Youtube Channel: 
+* Code School Youtube Channel: 
 
 https://www.youtube.com/watch?v=3GXspIuEDb0
 
-My Friend Joan Sebastian for help me with Angular issues.
+* My Friend Joan Sebastian for help me with Angular issues.
+
+
+##### Additional Comment
 
 if you want Organize the Code - Please Let me know - ! Thanks.
