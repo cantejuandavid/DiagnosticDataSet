@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<meta http-equiv="Expires" content="0"/>
+
+	<title>Diagnostic Search</title>
+
+	<!-- Angular-Material -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
+	<!-- JQuery File -->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+	<!-- AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+	<!-- Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+	<!-- AngularFire -->
+	<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+	<!-- Angular Material requires Angular.js Libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+	<!-- Angular Material Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+	<!-- Angular Material Icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+	<!-- NgClipboard Directive -->
+	<script src="https://cdn.rawgit.com/zenorocha/clipboard.js/master/dist/clipboard.min.js"></script>
+	
+	<!-- NgClipboard Directive -->
+	<script src="js/ngclipboard.min.js"></script>
+
+	<!-- Js File -->
+	<script src="js/app.js"></script>
+	
+	<!-- Css File -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!--CDN Bootstrap-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<script type="text/javascript" src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+
+</head>
+<body ng-app="myApp">
+	<div class="autocompletedemoCustomTemplate panel panel-primary" ng-controller="DiagnosticCtrl">
+
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+			    <md-truncate class="md_truncate_style">Diagnostic List Search
+			    </md-truncate>
+	        	<span flex></span>
+	        	<a href="data.html">
+	        	<i class=" icon_settings_style material-icons">settings</i> 
+	        	</a>
+	      	</div>
+		</md-toolbar>
+		
+		<div class="col-md-3 "></div>
+		<span class="col-md-6 col-sm-12 col-xs-12 text_style">Please type below to search</span>
+		<div class="col-md-3"></div>
+
+		<div class="row col-md-12">
+		<div class="col-md-3"></div>
+		<md-autocomplete class="col-md-6 col-sm-12 col-xs-12" md-selected-item="diagnostico" md-search-text="searchText.DiagnosticName" md-items="diagnostico in diagnosticos | filter:searchText" md-item-text="diagnostico.DiagnosticName" placeholder="Search" md-min-length="0" md-clear-button="true"> 
+		    <md-item-template>
+		    	<span>{{diagnostico.DiagnosticName}}</span>
+		    </md-item-template>
+		</md-autocomplete> 
+		<div class="col-md-3"></div>			
+		</div>
+
+       <div class="result_content row col-md-12" ng-show="diagnostico">
+			<div class="col-md-3"></div>
+	        	<md-toolbar class="col-md-6 col-xs-12 md-warn">
+				    <div class="md-toolbar-tools">
+				    	<h2 class="md-flex">{{diagnostico.DiagnosticName}}</h2>
+				    </div>
+				</md-toolbar>
+
+			<div class="col-md-3"></div>					
+				<md-content class="margin_forzado col-md-6  col-xs-12" flex layout-padding>				
+					<p id="foo"> {{diagnostico.DiagnosticDescription}} </p>
+					<button class=" btn_style_copy btn green waves-effect waves-light" data-clipboard-target="#foo" ng-click="showAlert($event)" ngclipboard>Copy
+						<i class="material-icons library_add">library_add</i>
+					</button>
+				</md-content>
+		</div>
+
+		<footer class="page-footer">         
+        	<div class="footer-copyright">
+            	<div class="container">
+           		© 2017 Copyright Text
+            	<a class="grey-text text-lighten-4 right">Fabian S Varon - Joan Sebastian Roa</a>
+            	</div>
+          	</div>
+		</footer>
+
+	</div>	
+</body>
+</html>
